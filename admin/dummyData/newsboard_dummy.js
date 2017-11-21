@@ -1,24 +1,36 @@
-const news =
-  [
-    {
-      title: 'Im an article!',
-      image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
-      date: 'Janury 20th, 2017',
-      alt: 'Kittie!',
-    },
-    {
-      title: 'Im another article!',
-      image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
-      date: 'Janury 22nd, 2017',
-      alt: 'Kittie!',
-    },
-    {
-      title: 'Im even more articles articles article!',
-      image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
-      date: 'Janury 23rd, 2017',
-      alt: 'Kittie!',
-    },
+const faker = require('Faker');
 
-  ];
+const news = [
+  {
+    title: faker.Lorem.sentence(),
+    image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
+    date: faker.Date.recent(5000),
+    alt: faker.Lorem.words(),
+  },
+  {
+    title: faker.Lorem.sentence(),
+    image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
+    date: faker.Date.recent(5000),
+    alt: faker.Lorem.words(),
+  },
+  {
+    title: faker.Lorem.sentence(),
+    image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
+    date: faker.Date.recent(5000),
+    alt: faker.Lorem.words(),
+  },
+  {
+    title: faker.Lorem.sentence(),
+    image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
+    date: faker.Date.recent(5000),
+    alt: faker.Lorem.words(),
+  },
+  {
+    title: faker.Lorem.sentence(),
+    image: 'http://via.placeholder.com/450x850?text=lorem+ipsum+dolore',
+    date: faker.Date.recent(5000),
+    alt: faker.Lorem.words(),
+  },
+];
 
 export default news;

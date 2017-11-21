@@ -9,7 +9,7 @@ import getAssetsForClientChunks from '../../shared/util/generateAssets';
 const chunksToRender = [
   'runtime',
   'vendor',
-  'admin',
+  'app',
 ];
 const assetsForRender = getAssetsForClientChunks(chunksToRender);
 function styleTags(styles) {
