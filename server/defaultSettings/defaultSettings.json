@@ -1,0 +1,12 @@
+
+{
+  "port": 3000,
+  "database": "mysql",
+  "connection": {
+    "DB_HOST": "d6vscs19jtah8iwb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "DB_USER": "ugve3gb1h0bbxiol",
+    "DB_PASSWORD": "w3mzifeur4ipkgxs",
+    "DB_NAME": "fo7nrp16ihenwnzo",
+    "DB_PORT":3306
+  }
+}
