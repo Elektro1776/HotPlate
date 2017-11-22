@@ -22,7 +22,7 @@ module.exports = {
     "import/prefer-default-export": ["off"],
     "import/first": ["off"],
     "global-require": ["off"],
-    // "import/no-extraneous-dependencies": ["warn", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
     "no-confusing-arrow": 0,
     "array-callback-return": 0,
     "consistent-return": 0,

@@ -10,6 +10,13 @@ import home from './homeReducer';
 import auth from './auth_reducer';
 import signedUp from './signup_reducer';
 import login from './login_reducer';
+import leaderboard from './leaderboard_reducer';
+import newsboard from './newsboard_reducer';
+import incentives from './incentives_reducer';
+import priceList from './priceList_reducer';
+import manuals from './manuals_reducer';
+import brochures from './brochures_reducer';
+import parts from './parts_reducer';
 
 
 export default combineReducers({
@@ -18,4 +25,11 @@ export default combineReducers({
   home,
   signedUp,
   login,
+  leaderboard,
+  newsboard,
+  incentives,
+  priceList,
+  manuals,
+  brochures,
+  parts,
 });

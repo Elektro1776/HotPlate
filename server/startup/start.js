@@ -1,3 +1,4 @@
+// console.log(' WHAT IS MOD?', MOD.SETTINGS.loadSettings);
 import { LoadSettings } from './loadSettings';
 
 import chalk from 'chalk';
