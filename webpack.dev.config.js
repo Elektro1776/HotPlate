@@ -13,28 +13,28 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const AssetsPlugin = require('assets-webpack-plugin')
   ;
 
+const test = function (key, value, originalValue, manifest) {
+  console.log(' WHAT IS THE KEY', key, ' AND VALUE', value, originalValue, manifest);
+  return {
+    key: 'blah',
+    value: 'value',
+  };
+};
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: '!!raw-loader!./server/src/views/index.ejs',
   filename: 'index.html',
   inject: 'body',
 });
 const root = process.cwd();
-module.exports = () =>
+
+module.exports = (things) =>
   // devtool: 'source-map',
   // target: 'web',
   ({
     context: path.resolve(__dirname),
     resolve: {
       extensions: ['*', '.js', '.jsx', '.json'],
-      modules: [
-        path.resolve('./client'),
-        path.resolve('./admin'),
-        path.resolve('./shared'),
-        path.resolve('./node_modules'),
-      ],
-      alias: {
-        Shared: path.resolve(__dirname, './shared'),
-      },
+      modules: [path.resolve('./client'), path.resolve('./admin'), path.resolve('./node_modules'), path.resolve(__dirname, 'client/node_modules')],
     },
     entry: {
       vendor: [
@@ -58,7 +58,6 @@ module.exports = () =>
         './admin/renderers/hmr.js',
       ],
     },
-    // stats: "detailed",
     output: {
       path: path.join(__dirname, 'public/dist'),
       filename: '[name].js',

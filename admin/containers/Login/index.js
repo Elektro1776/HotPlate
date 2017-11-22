@@ -44,7 +44,7 @@ class Login extends Component {
     // }
     return (
       <div>
-        <NavLink to="/signup"><button>Sign Up!</button></NavLink>
+        <NavLink to="/admin/signup"><button>Sign Up!</button></NavLink>
         {`we are trying to log in here
         we have to check these credentials at some point but for now we don't care what login info is used
 

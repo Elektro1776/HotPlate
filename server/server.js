@@ -20,7 +20,7 @@ import {
 } from './api';
 
 import { renderClientApp } from '../client/renderers/server';
-import { renderAdminApp } from '../admin/renderers/adminServer';
+import { renderAdminApp } from '../admin/renderers/server';
 
 // CUSTOM ROUTERS
 import authRouter from './auth/localAuth';
@@ -59,10 +59,12 @@ app.use('/user', loginRouter);
 app.use('/api/dealer', dealerRouter);
 app.use('/api/media', mediaRouter);
 app.get(/admin/, isAuthenticated, (req, res) => {
+  console.log('only admin here', req.url);
   renderAdminApp(req, res);
 });
 
 app.get('*', jwt({ secret: process.env.JWT_SECRET, credentialsRequired: false }), (req, res) => {
+  console.log('only client here', req.url);
   renderClientApp(req, res);
 });
 

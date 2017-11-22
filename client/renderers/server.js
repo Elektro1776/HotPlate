@@ -17,7 +17,7 @@ export const renderClientApp = (req, res) => {
   const context = {};
   const reactApp = renderToString(
     <Provider store={store}>
-      <StaticRouter basename="/" location={req.url} context={context}>
+      <StaticRouter location={req.url} context={context}>
         <Route render={({ location, match }) => (<Routes location={location} />)} />
       </StaticRouter>
     </Provider>,

@@ -5,7 +5,8 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import * as RouteMap from './static';
 import { connect } from 'react-redux';
 
-import ConnectedAppContainer from 'Shared/containers/ConnectedAppContainer';
+import DealerNav from '../components/DealerNav';
+import ConnectedAppContainer from '../containers/AppContainer';
 
 const PrivateRoute = ({ component: CurrentComponent, ...rest }) => {
   const { path, authorized } = { ...rest };
@@ -19,7 +20,7 @@ const PrivateRoute = ({ component: CurrentComponent, ...rest }) => {
           </div>
         ) : (
           <Redirect to={{
-            pathname: '/admin/login',
+            pathname: '/login',
           }}
           />
         )
@@ -71,6 +72,7 @@ class Routes extends Component {
     const { userIsAuthorized, userNotFound, loadingUser } = this.state;
     return (
       <ConnectedAppContainer>
+        {/* <DealerNav /> */}
         <Switch>
           <PrivateRoute exact path="/admin" component={RouteMap.Dashboard} authorized={userIsAuthorized} />
           {/* <PrivateRoute exact path="/leaderboard" component={RouteMap.Leaderboard} authorized={userIsAuthorized} />
