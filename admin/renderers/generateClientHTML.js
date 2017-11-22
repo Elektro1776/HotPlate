@@ -9,10 +9,12 @@ import getAssetsForClientChunks from '../../shared/util/generateAssets';
 const chunksToRender = [
   'runtime',
   'vendor',
+  'css',
   'admin',
 ];
 const assetsForRender = getAssetsForClientChunks(chunksToRender);
 function styleTags(styles) {
+  console.log('we should have stylesss', styles);
   return styles
     .map(style =>
       `<link href="${style}" media="screen, projection" rel="stylesheet" type="text/css" />`,
@@ -32,6 +34,7 @@ const generateHTML = (args) => {
   <!DOCTYPE html>
     <html>
       <head>
+        ${styleTags(assetsForRender.css)}
         ${helmet ? helmet.title.toString() : ''}
       </head>
       <body>

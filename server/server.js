@@ -58,13 +58,15 @@ app.use('/user/new', signupRouter);
 app.use('/user', loginRouter);
 app.use('/api/dealer', dealerRouter);
 app.use('/api/media', mediaRouter);
-app.get(/admin/, isAuthenticated, (req, res) => {
-  console.log('only admin here', req.url);
+app.get(/admin/, isAuthenticated, (req, res, next) => {
+  // console.log("??????", DEV);
+  // if (DEV) {
+  //   return;
+  // }
   renderAdminApp(req, res);
 });
 
 app.get('*', jwt({ secret: process.env.JWT_SECRET, credentialsRequired: false }), (req, res) => {
-  console.log('only client here', req.url);
   renderClientApp(req, res);
 });
 

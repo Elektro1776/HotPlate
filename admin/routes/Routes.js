@@ -5,7 +5,6 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import * as RouteMap from './static';
 import { connect } from 'react-redux';
 
-import DealerNav from '../components/DealerNav';
 import ConnectedAppContainer from '../containers/AppContainer';
 
 const PrivateRoute = ({ component: CurrentComponent, ...rest }) => {
@@ -20,7 +19,7 @@ const PrivateRoute = ({ component: CurrentComponent, ...rest }) => {
           </div>
         ) : (
           <Redirect to={{
-            pathname: '/login',
+            pathname: '/admin/login',
           }}
           />
         )
@@ -72,9 +71,12 @@ class Routes extends Component {
     const { userIsAuthorized, userNotFound, loadingUser } = this.state;
     return (
       <ConnectedAppContainer>
-        {/* <DealerNav /> */}
         <Switch>
-          <PrivateRoute exact path="/admin" component={RouteMap.Dashboard} authorized={userIsAuthorized} />
+          <PublicRoute exact path="/admin" component={RouteMap.Dashboard} authorized={userIsAuthorized} />
+          <PublicRoute exact path="/admin/shop" component={RouteMap.Shop} authorized={userIsAuthorized} />
+          <PublicRoute exact path="/admin/shop/products" component={RouteMap.Products} authorized={userIsAuthorized} />
+          <PublicRoute exact path="/admin/shop/product/:product_name/edit" component={RouteMap.EditProduct} authorized={userIsAuthorized} />
+
           {/* <PrivateRoute exact path="/leaderboard" component={RouteMap.Leaderboard} authorized={userIsAuthorized} />
           <PrivateRoute exact path="/incentives" component={RouteMap.Spiff} authorized={userIsAuthorized} />
           <PrivateRoute exact path="/incentives/submit" component={RouteMap.SpiffSubmit} authorized={userIsAuthorized} />

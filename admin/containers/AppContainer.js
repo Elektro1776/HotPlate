@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { checkUserToken, userTokenNotFound } from '../actions/authenticateUserActions';
+import ColumnLeft from '../components/ColumnLeft';
 
 class AppContainer extends Component {
   // constructor(props) {
@@ -18,6 +19,7 @@ class AppContainer extends Component {
     return (
       <div>
         {this.props.children}
+        <ColumnLeft />
       </div>
     );
   }

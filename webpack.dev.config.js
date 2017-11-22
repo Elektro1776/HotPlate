@@ -97,7 +97,7 @@ module.exports = (things) =>
               {
                 loader: 'css-loader',
                 query: {
-                  localIdentName: '[hash:8]',
+                  localIdentName: '[name]__[local]___[hash:8]',
                   modules: true,
                 },
               },
