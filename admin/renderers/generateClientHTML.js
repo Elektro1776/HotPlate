@@ -14,11 +14,8 @@ const chunksToRender = [
 ];
 const assetsForRender = getAssetsForClientChunks(chunksToRender);
 function styleTags(styles) {
-  console.log('we should have stylesss', styles);
   return styles
-    .map(style =>
-      `<link href="${style}" media="screen, projection" rel="stylesheet" type="text/css" />`,
-  )
+    .map((style) => `<link href="${style}" media="screen, projection" rel="stylesheet" type="text/css" />`)
     .join('\n');
 }
 function scriptTag(jsFilePath) {
@@ -30,11 +27,12 @@ function scriptTags(jsFilePaths) {
 }
 const generateHTML = (args) => {
   const { reactApp, helmet } = args;
-  let html = `
+  const html = `
   <!DOCTYPE html>
     <html>
       <head>
         ${styleTags(assetsForRender.css)}
+        <link href="/dist/transition.css" media="screen, projection" rel="stylesheet" type="text/css" />
         ${helmet ? helmet.title.toString() : ''}
       </head>
       <body>
@@ -42,7 +40,7 @@ const generateHTML = (args) => {
         ${scriptTags(assetsForRender.js)}
       </body>
     </html>
-  `
+  `;
   return html;
-}
+};
 export default generateHTML;

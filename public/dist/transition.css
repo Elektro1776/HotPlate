@@ -1,0 +1,40 @@
+/* Standard Drop Down*/
+.dropdown-enter {
+  opacity: 0.01;
+}
+
+.dropdown-enter.dropdown-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.dropdown-exit {
+  opacity: 1;
+}
+
+.dropdown-exit.dropdown-exit-active {
+  opacity: 0.01;
+  transition: opacity 800ms ease-in;
+}
+
+/*Fold out Drop Down*/
+
+.foldout-enter {
+  opacity: 1;
+}
+.foldout-enter.foldout-enter-active {
+  max-height:1000px;
+  -webkit-transform:perspective(400) rotate3d(0,0,0,0);
+}
+
+.foldout-exit {
+  opacity: 1;
+}
+
+.foldout-exit.foldout-exit-active {
+  max-height: 0;
+  -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+  -webkit-transform-origin:50% 0;
+
+
+}

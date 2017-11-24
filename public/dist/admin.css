@@ -1,0 +1,64 @@
+/**--- example styles ---**/
+.styles__container___138f641b {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 200px;
+  margin: auto;
+  border-radius: 4px; }
+
+.styles__todo-list___3e3fa33c > * {
+  margin: 5px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc; }
+
+.styles__container___138f641b > button {
+  margin-top: 20px; }
+body {
+  margin: 40px;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #fff;
+  color: #444; }
+
+h1, p {
+  margin: 0 0 1em 0; }
+
+.gridLayouts__main_content___fbaac4aa {
+  float: right;
+  width: 79.7872%; }
+
+.gridLayouts__column_left___57112bea {
+  float: left;
+  width: 19.1489%;
+  color: #fff;
+  background-color: #333; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* make a grid */
+.gridLayouts__wrapper___9edb847f {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px; }
+
+.gridLayouts__wrapper___9edb847f > * {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px; }
+
+.gridLayouts__header___23fdac41, .gridLayouts__footer___3424d3c4 {
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both; }
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .gridLayouts__wrapper___9edb847f > * {
+    width: auto;
+    margin: 0; } }

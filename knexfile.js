@@ -7,8 +7,8 @@ module.exports = {
     connection: {
       host: 'localhost',
       user: 'root',
-      password: '',
-      database: 'dealer_testing',
+      password: 'password',
+      database: 'rcomm',
     },
   },
 

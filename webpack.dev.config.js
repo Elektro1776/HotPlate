@@ -111,7 +111,7 @@ module.exports = (things) =>
     },
     plugins: [
       // new webpack.NoEmitOnErrorsPlugin(),
-      new CleanWebpackPlugin(['public/dist']),
+      // new CleanWebpackPlugin(['public/dist']),
       new webpack.HotModuleReplacementPlugin(),
       // new webpack.NamedModulesPlugin(),
       new AssetsPlugin({ path: path.join(process.cwd(), 'public/dist/'), filename: 'assets.json' }),

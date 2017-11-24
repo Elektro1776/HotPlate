@@ -1,0 +1,76 @@
+//
+// $background-color: #333;
+// $primary-color: #fff;
+//
+// .column_left {
+//   // color: $primary-color
+//   color: $primary-color;
+//   background-color: $background-color;
+//   grid-area: column_left;
+// }
+// .fade-enter {
+//   opacity: 0.01;
+// }
+//
+// .fade-enter.fade-enter-active {
+//   opacity: 1;
+//   transition: opacity 1000ms ease-in;
+// }
+//
+// .fade-exit {
+//   opacity: 1;
+// }
+//
+// .fade-exit.fade-exit-active {
+//   opacity: 0.01;
+//   transition: opacity 800ms ease-in;
+// }
+// .dropdown-enter {
+//   opacity: 0.01;
+// }
+//
+// .dropdown-enter.dropdown-enter-active {
+//   opacity: 1;
+//   transition: opacity 1000ms ease-in;
+// }
+//
+// .dropdown-exit {
+//   opacity: 1;
+// }
+//
+// .dropdown-exit.dropdown-exit-active {
+//   opacity: 0.01;
+//   transition: opacity 800ms ease-in;
+// }
+
+.sub_child_menuItem {
+  background-color: #fff;
+  color: #fff;
+  z-index:1;
+  max-height:0;
+  overflow:hidden;
+  -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+  -webkit-transform-origin:50% 0;
+  -webkit-transition:350ms;
+  -moz-transition:350ms;
+  -o-transition:350ms;
+  transition:350ms;
+}
+/**--- example styles ---**/
+.container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 200px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.todo-list > * {
+  margin: 5px 0;
+  padding: 5px 0;
+  border-bottom:  1px solid #ccc;
+}
+
+.container > button {
+  margin-top: 20px;
+}

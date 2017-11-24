@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { checkUserToken, userTokenNotFound } from '../actions/authenticateUserActions';
 import ColumnLeft from '../components/ColumnLeft';
+import grid from './styles/gridLayouts.scss';
 
 class AppContainer extends Component {
   // constructor(props) {
@@ -17,9 +18,11 @@ class AppContainer extends Component {
   }
   render() {
     return (
-      <div>
-        {this.props.children}
+      <div className={`${grid.wrapper}`}>
         <ColumnLeft />
+        <div className={`${grid.main_content}`}>
+          {this.props.children}
+        </div>
       </div>
     );
   }
