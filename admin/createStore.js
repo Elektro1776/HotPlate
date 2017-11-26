@@ -3,12 +3,14 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { composeWithDevTools } from 'remote-redux-devtools';
 import thunk from 'redux-thunk';
+import { callAPIMiddleware } from './middleware';
+
 import reducer from './reducers';
 
 export default function configureStore(history, initalState) {
   // const composeEnhancers = composeWithDevTools({ realtime: true });
   const routeMiddleware = routerMiddleware(history);
-  const middleware = [thunk, routeMiddleware];
+  const middleware = [thunk, callAPIMiddleware, routeMiddleware];
   const enhancer = compose(
     applyMiddleware(...middleware),
     // devTools({

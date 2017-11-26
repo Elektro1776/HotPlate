@@ -70,7 +70,10 @@ ColumnLeft.defaultProps = {
         { name: 'Products', path: '/admin/shop/products' },
         { name: 'Categories', path: '/admin/shop' }],
     },
-    { name: 'Blog', path: '/admin' },
+    { name: 'CMS', path: '/admin' },
+    { name: 'Sales', path: '/admin/sales' },
+    { name: 'Customers', path: '/admin/customers' },
+    { name: 'Settings', path: '/admin/settings' },
   ],
 };
 ColumnLeft.propTypes = {

@@ -5,3 +5,5 @@ export { default as Signup } from '../containers/Signup';
 export { default as Shop } from '../containers/Shop';
 export { default as Products } from '../containers/Shop/Products';
 export { default as EditProduct } from '../containers/Shop/EditProduct';
+export { default as CustomerContainer } from '../containers/Customers';
+export { default as EditCustomer } from '../containers/Customers/EditCustomer';

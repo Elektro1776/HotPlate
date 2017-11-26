@@ -13,7 +13,7 @@ const PrivateRoute = ({ component: CurrentComponent, ...rest }) => {
     <Route
       path={path}
       render={(props) => (
-        authorized ? (
+        true ? (
           <div>
             <CurrentComponent {...props} />
           </div>
@@ -72,10 +72,12 @@ class Routes extends Component {
     return (
       <ConnectedAppContainer>
         <Switch>
-          <PublicRoute exact path="/admin" component={RouteMap.Dashboard} authorized={userIsAuthorized} />
-          <PublicRoute exact path="/admin/shop" component={RouteMap.Shop} authorized={userIsAuthorized} />
-          <PublicRoute exact path="/admin/shop/products" component={RouteMap.Products} authorized={userIsAuthorized} />
-          <PublicRoute exact path="/admin/shop/product/:product_name/edit" component={RouteMap.EditProduct} authorized={userIsAuthorized} />
+          <PrivateRoute exact path="/admin" component={RouteMap.Dashboard} authorized={userIsAuthorized} />
+          <PrivateRoute exact path="/admin/shop" component={RouteMap.Shop} authorized={userIsAuthorized} />
+          <PrivateRoute exact path="/admin/shop/products" component={RouteMap.Products} authorized={userIsAuthorized} />
+          <PrivateRoute exact path="/admin/shop/product/:product_name/edit" component={RouteMap.EditProduct} authorized={userIsAuthorized} />
+          <PrivateRoute exact path="/admin/customers" component={RouteMap.CustomerContainer} authorized={userIsAuthorized} />
+          <PrivateRoute exact path="/admin/customers/:customer_id/edit" component={RouteMap.EditCustomer} authorized={userIsAuthorized} />
 
           {/* <PrivateRoute exact path="/leaderboard" component={RouteMap.Leaderboard} authorized={userIsAuthorized} />
           <PrivateRoute exact path="/incentives" component={RouteMap.Spiff} authorized={userIsAuthorized} />

@@ -1,1 +1,1 @@
-{"app":{"js":"/dist/app.js"},"admin":{"js":"/dist/admin.js","css":"/dist/admin.css"},"vendor":{"js":"/dist/vendor.js"}}
+{"admin":{"js":"/dist/admin.js","css":"/dist/admin.css"},"app":{"js":"/dist/app.js"},"vendor":{"js":"/dist/vendor.js"}}

@@ -18,7 +18,9 @@ import {
   dealerRouter,
   mediaRouter,
 } from './api';
-
+import {
+  customerRouter,
+} from './admin/api';
 import { renderClientApp } from '../client/renderers/server';
 import { renderAdminApp } from '../admin/renderers/server';
 
@@ -58,6 +60,7 @@ app.use('/user/new', signupRouter);
 app.use('/user', loginRouter);
 app.use('/api/dealer', dealerRouter);
 app.use('/api/media', mediaRouter);
+app.use('/api/customers', customerRouter);
 app.get(/admin/, isAuthenticated, (req, res, next) => {
   // console.log("??????", DEV);
   // if (DEV) {

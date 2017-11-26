@@ -1,3 +1,16 @@
+.styles__sub_child_menuItem___ce019a90 {
+  background-color: #fff;
+  color: #fff;
+  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+  -webkit-transform-origin: 50% 0;
+  -webkit-transition: 350ms;
+  -moz-transition: 350ms;
+  -o-transition: 350ms;
+  transition: 350ms; }
+
 /**--- example styles ---**/
 .styles__container___138f641b {
   padding: 20px;
@@ -23,6 +36,7 @@ h1, p {
   margin: 0 0 1em 0; }
 
 .gridLayouts__main_content___fbaac4aa {
+  height: 500px;
   float: right;
   width: 79.7872%; }
 

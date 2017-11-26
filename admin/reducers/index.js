@@ -17,11 +17,12 @@ import priceList from './priceList_reducer';
 import manuals from './manuals_reducer';
 import brochures from './brochures_reducer';
 import parts from './parts_reducer';
-
+import customers from './customer_reducer';
 
 export default combineReducers({
   router: routerReducer,
   auth,
+  customers,
   home,
   signedUp,
   login,
