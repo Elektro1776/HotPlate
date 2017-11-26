@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 // Components
 import Customers from './Customers';
 // Actions
@@ -23,7 +23,6 @@ class CustomerContainer extends Component {
   }
   render() {
     const { location: { pathname } } = this.props;
-    console.log(' PATH NAME ', pathname);
     return (
       <div>
         CustomerContainer!
@@ -34,9 +33,16 @@ class CustomerContainer extends Component {
     );
   }
 }
-
+CustomerContainer.propTypes = {
+  location: PropTypes.object.isRequired,
+  customers: PropTypes.array,
+  loadCustomers: PropTypes.func.isRequired,
+};
+CustomerContainer.defaultProps = {
+  customers: [],
+};
 export default connect((state) => ({
-  customers: state.customers,
+  customers: state.customers.customers,
 }), (dispatch) => ({
   loadCustomers: () => dispatch(loadCustomers()),
 }))(CustomerContainer);

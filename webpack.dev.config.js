@@ -46,6 +46,7 @@ module.exports = (things) =>
         'react-router',
         'redux',
         'redux-thunk',
+        // 'react-icons/io',
       ],
       app: [
         'react-hot-loader/patch',

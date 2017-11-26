@@ -1,14 +1,20 @@
 import { LOAD_CUSTOMERS_REQUEST, LOAD_CUSTOMERS_SUCCESS, LOAD_CUSTOMERS_FAILURE } from '../actions/customerActions';
 import createReducer from './reducerFactory';
-console.log('WE GOT A STRINGGGGG', LOAD_CUSTOMERS_REQUEST);
-export default createReducer([], {
+
+const initalState = {
+  customers: [],
+  requestingCustomers: false,
+  receivedCustomers: false,
+}
+export default createReducer(initalState, {
   [LOAD_CUSTOMERS_REQUEST](state, action) {
     // console.info('ACTIONSSS', action);
-    return [...state];
+    return Object.assign({}, state, { requestingCustomers: true });
   },
   [LOAD_CUSTOMERS_SUCCESS](state, action) {
-    console.info('ACTIONSSS', state, action.response);
-    return [...state, action.response];
+    return Object.assign({}, state, {
+      customers: state.customers.concat(action.response),
+    });
   },
   [LOAD_CUSTOMERS_FAILURE](state, action) {
     // console.info('ACTIONSSS', action);

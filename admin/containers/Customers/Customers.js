@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { CustomerTable } from '../../components/Tables';
-console.log('WHAT IS CUSTOMER TABLE', CustomerTable);
+import PropTypes from 'prop-types';
+
 class Customers extends Component {
   render() {
     const { customers } = this.props;
-    console.log('CUSTOMERS', customers);
+    console.log('What is customers here?', customers);
     return (
       <div>
         <CustomerTable
@@ -14,5 +15,10 @@ class Customers extends Component {
     );
   }
 }
-
+Customers.propTypes = {
+  customers: PropTypes.arrayOf(PropTypes.object),
+};
+Customers.defaultProps = {
+  customers: [],
+};
 export default Customers;
