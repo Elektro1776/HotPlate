@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 // import * as styles from 'react-table/react-table.scss';
 // console.log('DO WE HAVE STYLES?', styles);
-import Edit from 'react-icons/lib/io/edit';
+import EditIcon from 'react-icons/lib/io/edit';
 
 class CustomerTable extends Component {
 
@@ -74,7 +74,7 @@ class CustomerTable extends Component {
                 {/* Need to make this clickable
                   and render edit component with user
                   selected */}
-                <Edit />
+                <EditIcon />
               </span>
             ),
           },

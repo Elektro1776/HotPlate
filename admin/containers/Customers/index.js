@@ -7,6 +7,8 @@ import Customers from './Customers';
 import { loadCustomers } from '../../actions/customerActions';
 
 class CustomerContainer extends Component {
+  static fetchData = ({ store }) => store.dispatch(loadCustomers());
+
   constructor() {
     super();
     this.state = {
@@ -14,10 +16,14 @@ class CustomerContainer extends Component {
     };
   }
   componentWillMount() {
-    this.props.loadCustomers();
+  }
+  componentDidMount() {
+    // this.props.loadCustomers();
+    console.log('WHAT IS OUR CUSTOMER STATE?', this.props.customers);
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.customers.length !== this.props.customers.length) {
+      console.log('WHAT ARE THE NEXT PROPS?', nextProps);
       this.setState({ customers: nextProps.customers });
     }
   }

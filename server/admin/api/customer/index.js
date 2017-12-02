@@ -4,8 +4,9 @@ import { Customer } from '../../../models';
 const customerRouter = express.Router();
 
 customerRouter.get('/', (req, res) => {
+  // console.log('WE HIT CUSTOMERS API');
   Customer.getCustomers().then((customers) => {
-    console.info('ALL CUSTOMERS', customers);
+    // console.info('ALL CUSTOMERS', customers);
     res.status(200).json(customers);
   })
     .catch((err) => {

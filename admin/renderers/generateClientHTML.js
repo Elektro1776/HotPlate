@@ -26,7 +26,7 @@ function scriptTags(jsFilePaths) {
   return jsFilePaths.map(scriptTag).join('\n');
 }
 const generateHTML = (args) => {
-  const { reactApp, helmet } = args;
+  const { reactApp, helmet, preloadedState } = args;
   const html = `
   <!DOCTYPE html>
     <html>
@@ -34,12 +34,16 @@ const generateHTML = (args) => {
         ${styleTags(assetsForRender.css)}
         <link href="/dist/transition.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="/dist/react-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <script>
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
 
+        </script>
         ${helmet ? helmet.title.toString() : ''}
       </head>
       <body>
         <div id='root'>${reactApp}</div>
         ${scriptTags(assetsForRender.js)}
+
       </body>
     </html>
   `;

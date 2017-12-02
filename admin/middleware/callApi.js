@@ -1,5 +1,7 @@
+import Promise from 'bluebird';
+
 export const callAPIMiddleware = ({ dispatch, getState }) => {
-  return (next) => (action) => {
+  return (next) => (action) => new Promise((resolve, reject) => {
     const {
       types,
       callAPI,
@@ -10,7 +12,6 @@ export const callAPIMiddleware = ({ dispatch, getState }) => {
       // Normal action: pass it on
       return next(action);
     }
-
     if (
       !Array.isArray(types) ||
       types.length !== 3 ||
@@ -34,21 +35,27 @@ export const callAPIMiddleware = ({ dispatch, getState }) => {
         type: requestType,
       }),
     );
-    return callAPI().then((data) => data.json())
-      .then((response) => {
+    callAPI() // .then((data) => data.json())
+      .end((err,response) => {
+        console.log('WHAT IS THE ERR', err);
+        // console.log('WHAT IS THE RESPONSE', response);
         dispatch(
           Object.assign({}, payload, {
-            response,
+            response: response.body,
             type: successType,
           }),
         );
+        resolve();
       })
-      .catch((error) =>
-        dispatch(
-          Object.assign({}, payload, {
-            error,
-            type: failureType,
-          }),
-        ));
-  };
+      // .catch((error) => {
+      //   dispatch(
+      //     Object.assign({}, payload, {
+      //       error,
+      //       type: failureType,
+      //     }),
+      //   );
+      //   reject(error);
+      // },
+      // );
+  });
 };

@@ -1,12 +1,13 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, matchPath } from 'react-router-dom';
+
 import * as RouteMap from './static';
 import { connect } from 'react-redux';
 
 import ConnectedAppContainer from '../containers/AppContainer';
-
+// console.log('WHAT IS MATCH??', matchPath);
 const PrivateRoute = ({ component: CurrentComponent, ...rest }) => {
   const { path, authorized } = { ...rest };
   return (
@@ -69,6 +70,7 @@ class Routes extends Component {
   }
   render() {
     const { userIsAuthorized, userNotFound, loadingUser } = this.state;
+    // console.log('RENDERING ROUTES@!!@!@!', this.props);
     return (
       <ConnectedAppContainer>
         <Switch>
