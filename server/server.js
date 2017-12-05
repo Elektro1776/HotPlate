@@ -12,12 +12,13 @@ import cookieParser from 'cookie-parser';
 // import knex from 'knex';
 import session from 'express-session';
 // import config from './config';
-
 import MOD from './startup';
 import {
   dealerRouter,
   mediaRouter,
+  OC,
 } from './api';
+OC.getProducts();
 import {
   customerRouter,
 } from './admin/api';

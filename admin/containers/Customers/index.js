@@ -18,12 +18,15 @@ class CustomerContainer extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    // this.props.loadCustomers();
-    console.log('WHAT IS OUR CUSTOMER STATE?', this.props.customers);
+    const { customers } = this.props;
+    if (customers.length === 0) {
+      return this.props.loadCustomers();
+    }
+    console.info('NO CUSTOMERS FROM PROPS');
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.customers.length !== this.props.customers.length) {
-      console.log('WHAT ARE THE NEXT PROPS?', nextProps);
+      console.info('WHAT ARE THE NEXT PROPS?', nextProps);
       this.setState({ customers: nextProps.customers });
     }
   }
