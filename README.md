@@ -23,4 +23,4 @@
   * You will now see a browser automatically open that has HMR and auto updating for client/server code without any refreshing!
 
 
-[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/austinreynolds?utm_source=github&utm_medium=button&u
+[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/austinreynolds?utm_source=github&utm_medium=button&utm_term=austinreynolds&utm_campaign=github)
