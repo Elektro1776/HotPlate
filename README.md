@@ -21,3 +21,6 @@
   * If you need to kill this process then you can by hitting `ctrl+c` in the terminal that is running it
   * This will have a server for logs running on port 3000, a connection to the mongo, and a server for react based on port 8080
   * You will now see a browser automatically open that has HMR and auto updating for client/server code without any refreshing!
+
+
+[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/austinreynolds?utm_source=github&utm_medium=button&u
